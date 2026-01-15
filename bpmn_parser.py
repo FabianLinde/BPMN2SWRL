@@ -130,77 +130,10 @@ def enumerate_paths(graph):
 
 
 
-def create_human_readable_swrl(paths):
-
-#Create strings like "generatesSyntethicContent?(?AIsystem, true) ^ onlyEditsSyntheticContent?(?AIsystem, true)  -> task(?hasMarkingObligation, "AIprovider") ^ task(?FollowVoluntaryCodeOfConduct, "AIprovider")"
-
-    strings = []
-
-    for i, path in enumerate(paths, 1):
-
-        conditions = []
-        answers = []
-        tasks = []
-
-
-        for step in path:
-            
-            key = next(iter(step))
-            
-            value = step[key]
-
-            if key =="condition":
-                conditions.append(value)
-            if key =="answer":
-                answers.append(value)
-            if key =="task":
-                tasks.append(value)
-
-
-
-        string = ""
-
-        for condition, answer in zip(conditions, answers):
-
-            if answer == "Yes":
-                bowl = "true"
-            else:
-                bowl = "false"
-
-
-            string += condition.split(" ")[1] + "(?" + condition.split(" ")[0] +  ", " + bowl + ") ^ "
-
-
-        string = string [:-2] + " -> "
-
-        for task in tasks:
-            string += "task(?" + task.split(" ")[0] + ", " + '?' + task.split(" ")[1] + ") ^ "
-
-
-        string = string[:-2]
-
-        strings.append(string)
-
-    return strings
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 def print_swrl_rules_to_file(paths):
 
     swrl_rules = []
+    human_readable_swrl_rules = []
 
     for i, path in enumerate(paths, 1):
 
@@ -225,49 +158,61 @@ def print_swrl_rules_to_file(paths):
                 tasks.append(value)
 
         body_atoms = ""
+        
+        human_readable_swrl_rule = ""
+
 
         for condition, answer in zip(conditions, answers):
 
-            body_atom = """<swrl:DatavaluedPropertyAtom>
-                                    <swrl:propertyPredicate rdf:resource="{condition_name}"/>
-                                    <swrl:argument1 rdf:resource="#?{actor_name}"/>
-                                    <swrl:argument2 rdf:datatype="&xsd;boolean">{condition_bool}</swrl:argument2>
-                                </swrl:DatavaluedPropertyAtom>""".format(condition_name=condition.split(" ")[1], actor_name=condition.split(" ")[0], condition_bool="true" if answer == "Yes" else "false")
+            condition_bool = "true" if answer == "Yes" else "false"
 
-            body_atoms += body_atom
+            body_atom = """<swrl:DatavaluedPropertyAtom>
+                            \t\t\t\t<swrl:propertyPredicate rdf:resource="{condition_name_var}"/>
+                            \t\t\t\t<swrl:argument1 rdf:resource="#?{actor_name_var}"/>
+                            \t\t\t\t<swrl:argument2 rdf:datatype="&xsd;boolean">{condition_bool_var}</swrl:argument2>
+                            \t\t</swrl:DatavaluedPropertyAtom>""".format(condition_name_var=condition.split(" ")[1], actor_name_var=condition.split(" ")[0], condition_bool_var=condition_bool)
+
+            body_atoms += body_atom + "\n\t\t\t\t\t\t\t\t\t"
+
+            human_readable_swrl_rule += condition.split(" ")[1] + "(?" + condition.split(" ")[0] +  ", " + condition_bool + ") ^ "
 
         head_atoms = ""
+
+        human_readable_swrl_rule = human_readable_swrl_rule [:-2] + " -> "
 
         for task in tasks:
 
             head_atom = """<swrl:DatavaluedPropertyAtom>
-                                    <swrl:propertyPredicate rdf:resource="#task"/>
-                                    <swrl:argument1 rdf:resource="#?{actor_name}"/>
-                                    <owlx:DataValue owlx:datatype="&xsd;string">{task_name}</owlx:DataValue>
-                                </swrl:DatavaluedPropertyAtom>""".format(task_name=task.split(" ")[1], actor_name=task.split(" ")[0])
+                            \t\t\t\t<swrl:propertyPredicate rdf:resource="#task"/>
+                            \t\t\t\t<swrl:argument1 rdf:resource="#?{actor_name_var}"/>
+                            \t\t\t\t<owlx:DataValue owlx:datatype="&xsd;string">{task_name_var}</owlx:DataValue>
+                            \t\t</swrl:DatavaluedPropertyAtom>""".format(task_name_var=task.split(" ")[1], actor_name_var=task.split(" ")[0])
         
-            head_atoms += head_atom + "\n"
+            head_atoms += head_atom + "\n\t\t\t\t\t\t\t\t\t"
+
+            human_readable_swrl_rule += "task(?" + task.split(" ")[0] + ", " + '?' + task.split(" ")[1] + ") ^ "
 
 
+        human_readable_swrl_rule = human_readable_swrl_rule[:-2]
+
         
-        swrl_rule = """<ruleml:imp>
-                            <ruleml:_rlab ruleml:href="#{rule_name_var}"/>
-                            <ruleml:_body> 
-                                {body_atoms_var}
-                            </ruleml:_body> 
-                            <ruleml:_head> 
-                                {head_atoms_var}
-                            </ruleml:_head> 
-                        </ruleml:imp>""".format(rule_name_var=rule_name, body_atoms_var=body_atoms, head_atoms_var=head_atoms)                                          
+        swrl_rule = """ \t\t\t\t\t\t<ruleml:imp>
+                        \t<ruleml:_rlab ruleml:href="#{rule_name_var}"/>
+                        \t\t<ruleml:_body> 
+                        \t\t\t{body_atoms_var}
+                        \t\t</ruleml:_body> 
+                        \t\t<ruleml:_head> 
+                        \t\t\t{head_atoms_var}
+                        \t\t</ruleml:_head> 
+                        </ruleml:imp>""".format(rule_name_var=rule_name, body_atoms_var=body_atoms[:-10], head_atoms_var=head_atoms[:-10])                                          
 
         swrl_rules.append(swrl_rule)
 
+        human_readable_swrl_rules.append(human_readable_swrl_rule)
+
     with open("swrl_rules.txt", "w", encoding="utf-8") as f:
-        for i, swrl_rule in enumerate(swrl_rules):
-            f.write("#PATH " + str(i+1) + " " + "\n" + swrl_rule + "\n\n\n")    
-
-
-
+        for i, (swrl_rule, human_readable_swrl_rule) in enumerate(zip(swrl_rules, human_readable_swrl_rules)):
+            f.write("#PATH " + str(i+1) + " " + "\n" + "#Human-readable SWRL: " + human_readable_swrl_rule + "\n\n" + swrl_rule + "\n\n\n")
 
 
 
@@ -280,4 +225,5 @@ if __name__ == "__main__":
     graph = parse_bpmn(bpmn_file)
     paths = enumerate_paths(graph)
 
+    #[print(path) for path in paths]
     print_swrl_rules_to_file(paths)

@@ -1,0 +1,135 @@
+#PATH 1 
+#Human-readable SWRL: generatesSyntethicContent(?AIsystem, true) ^ onlyEditsSyntheticContent(?AIsystem, true)  -> task(?AIprovider, ?hasMarkingObligation) ^ task(?AIprovider, ?FollowVoluntaryCodeOfConduct) 
+
+ 						<ruleml:imp>
+                        	<ruleml:_rlab ruleml:href="#rule_1"/>
+                        		<ruleml:_body> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="generatesSyntethicContent"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="onlyEditsSyntheticContent"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_body> 
+                        		<ruleml:_head> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="#task"/>
+                            				<swrl:argument1 rdf:resource="#?AIprovider"/>
+                            				<owlx:DataValue owlx:datatype="&xsd;string">hasMarkingObligation</owlx:DataValue>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="#task"/>
+                            				<swrl:argument1 rdf:resource="#?AIprovider"/>
+                            				<owlx:DataValue owlx:datatype="&xsd;string">FollowVoluntaryCodeOfConduct</owlx:DataValue>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_head> 
+                        </ruleml:imp>
+
+
+#PATH 2 
+#Human-readable SWRL: generatesSyntethicContent(?AIsystem, true) ^ onlyEditsSyntheticContent(?AIsystem, false)  -> task(?AIprovider, ?hasMarkingObligation) ^ task(?BPMNtool, ?printMessage:LIMITED_RISK) 
+
+ 						<ruleml:imp>
+                        	<ruleml:_rlab ruleml:href="#rule_2"/>
+                        		<ruleml:_body> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="generatesSyntethicContent"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="onlyEditsSyntheticContent"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">false</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_body> 
+                        		<ruleml:_head> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="#task"/>
+                            				<swrl:argument1 rdf:resource="#?AIprovider"/>
+                            				<owlx:DataValue owlx:datatype="&xsd;string">hasMarkingObligation</owlx:DataValue>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="#task"/>
+                            				<swrl:argument1 rdf:resource="#?BPMNtool"/>
+                            				<owlx:DataValue owlx:datatype="&xsd;string">printMessage:LIMITED_RISK</owlx:DataValue>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_head> 
+                        </ruleml:imp>
+
+
+#PATH 3 
+#Human-readable SWRL: generatesSyntethicContent(?AIsystem, false)  -> task(?AIprovider, ?FollowVoluntaryCodeOfConduct) 
+
+ 						<ruleml:imp>
+                        	<ruleml:_rlab ruleml:href="#rule_3"/>
+                        		<ruleml:_body> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="generatesSyntethicContent"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">false</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_body> 
+                        		<ruleml:_head> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="#task"/>
+                            				<swrl:argument1 rdf:resource="#?AIprovider"/>
+                            				<owlx:DataValue owlx:datatype="&xsd;string">FollowVoluntaryCodeOfConduct</owlx:DataValue>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_head> 
+                        </ruleml:imp>
+
+
+#PATH 4 
+#Human-readable SWRL: interactsWithPeople(?AIsystem, true)  -> task(?AIprovider, ?hasInformationObligation) ^ task(?BPMNtool, ?printMessage:LIMITED_RISK) 
+
+ 						<ruleml:imp>
+                        	<ruleml:_rlab ruleml:href="#rule_4"/>
+                        		<ruleml:_body> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="interactsWithPeople"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_body> 
+                        		<ruleml:_head> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="#task"/>
+                            				<swrl:argument1 rdf:resource="#?AIprovider"/>
+                            				<owlx:DataValue owlx:datatype="&xsd;string">hasInformationObligation</owlx:DataValue>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="#task"/>
+                            				<swrl:argument1 rdf:resource="#?BPMNtool"/>
+                            				<owlx:DataValue owlx:datatype="&xsd;string">printMessage:LIMITED_RISK</owlx:DataValue>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_head> 
+                        </ruleml:imp>
+
+
+#PATH 5 
+#Human-readable SWRL: interactsWithPeople(?AIsystem, false)  -> task(?AIprovider, ?FollowVoluntaryCodeOfConduct) 
+
+ 						<ruleml:imp>
+                        	<ruleml:_rlab ruleml:href="#rule_5"/>
+                        		<ruleml:_body> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="interactsWithPeople"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">false</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_body> 
+                        		<ruleml:_head> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="#task"/>
+                            				<swrl:argument1 rdf:resource="#?AIprovider"/>
+                            				<owlx:DataValue owlx:datatype="&xsd;string">FollowVoluntaryCodeOfConduct</owlx:DataValue>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_head> 
+                        </ruleml:imp>
+
+
