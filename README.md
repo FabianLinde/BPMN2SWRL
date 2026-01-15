@@ -1,5 +1,13 @@
-**Structure of bpmn_to_swrl.py:**
+## Direct BPMN-to-SWRL Pipeline (Fabian's Implementation)
+File: `bpmn_to_swrl_fabian.py`
 
+### Usage
+```bash
+python bpmn_to_swrl_fabian.py input.bpmn
+```
+This will output a file title input_swrl_rules.txt.
+
+### How It Works
 1. The BPMN XML is parsed, by nodes and by flows, resulting in a graph.
 2. All possible paths of the graph are indexed through DFS (depth-first-search).
 3. For each path, conditions, options and resulting tasks/obligations are extracted.
@@ -8,6 +16,7 @@
 ---
 
 ## Alternative: SWI-Prolog Pipeline (Meme's Implementation)
+Files: `swi_converter.py` and `swrl_executable.py`
 
 An alternative converter using Kowalski's SWI-Prolog/LPS for parsing Logical English.
 
@@ -48,7 +57,9 @@ python swrl_executable.py output.swrl executable.pl     # For Prolog
 2. Adds relationship predicates (e.g., `providesAISystem(?provider, ?system)`)
 3. Exports to executable formats (OWL/Jena/Prolog)
 
-### Key Difference
+---
+
+## Key Difference Between Approaches
 
 - **Fabian's:** Pattern-based parsing of task names
 - **Meme's:** Uses Kowalski's actual LPS parser for Logical English → Prolog conversion
