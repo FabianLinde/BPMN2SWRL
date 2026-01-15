@@ -101,113 +101,7 @@ def enumerate_paths(graph):
     for start in graph.start_events:
         dfs(start, set(), [])
 
-    return paths
-
-
-def pretty_print_paths_OLD(paths):
-    for i, path in enumerate(paths, 1):
-        print(f"\nPath {i}:")
-        for step in path:
-            if step["type"] == "sequenceFlow" and step['name'] is not None:
-                #print(f"  --[{step['id']} | {step['name']}]-->")
-                print(step['name'])
-            else:
-                if step['type'] == "exclusiveGateway":
-                    print("CONDITION:", step['name'])
-                if step['type'] == "parallelGateway":
-                    continue
-                if step['type'] == "task":
-                    print("OBLIGATION:", step['name'])
-                #
-                
-                #print(f"  ({step['type']}) {step['id']} : {step['name']}")
-                print(step['name'])
-
-
-
-
-
-
-def pretty_print_paths(paths):
-    for i, path in enumerate(paths, 1):
-        print("PATH: ", i)
-        for step in path:
-            if step["name"] is not None:
-                if step['type'] == "exclusiveGateway":
-                    print("CONDITION:", step['name'])
-                if step['type'] == "parallelGateway":
-                    continue
-                if step['type'] == "task":
-                    print("OBLIGATION:", step['name'])
-                if step['type'] == "sequenceFlow":
-                    print("ANSWER: ", step['name'])
-        print("\n")
-
-
-
-
-
-
-def create_human_readable_swrl(paths):
-
-    strings = []
-
-    for i, path in enumerate(paths, 1):
-
-        conditions = []
-        answers = []
-        tasks = []
-
-
-        for step in path:
-            
-            key = next(iter(step))
-            
-            value = step[key]
-            print(key, value)
-
-            if key =="condition":
-                conditions.append(value)
-            if key =="answer":
-                answers.append(value)
-            if key =="task":
-                tasks.append(value)
-
-
-        print(answers)
-
-        string = ""
-
-        for condition, answer in zip(conditions, answers):
-
-            print(answer)
-            if answer == "Yes":
-                bowl = "true"
-            else:
-                bowl = "false"
-
-
-            string += condition.split(" ")[1] + "(?" + condition.split(" ")[0] +  ", " + bowl + ") ^ "
-
-
-        string = string [:-2] + " -> "
-
-        for task in tasks:
-            string += "task(?" + task.split(" ")[1] + ", " + '"' + task.split(" ")[0] + '"' + ") ^ "
-
-
-        string = string[:-2]
-
-        strings.append(string)
-
-    return strings
-
-
-
-
-
-
-def simple_paths_save(paths):
+   # return paths
 
     simple_paths = []
 
@@ -232,51 +126,158 @@ def simple_paths_save(paths):
 
     return simple_paths
 
+
+
+
+
+def create_human_readable_swrl(paths):
+
+#Create strings like "generatesSyntethicContent?(?AIsystem, true) ^ onlyEditsSyntheticContent?(?AIsystem, true)  -> task(?hasMarkingObligation, "AIprovider") ^ task(?FollowVoluntaryCodeOfConduct, "AIprovider")"
+
+    strings = []
+
+    for i, path in enumerate(paths, 1):
+
+        conditions = []
+        answers = []
+        tasks = []
+
+
+        for step in path:
+            
+            key = next(iter(step))
+            
+            value = step[key]
+
+            if key =="condition":
+                conditions.append(value)
+            if key =="answer":
+                answers.append(value)
+            if key =="task":
+                tasks.append(value)
+
+
+
+        string = ""
+
+        for condition, answer in zip(conditions, answers):
+
+            if answer == "Yes":
+                bowl = "true"
+            else:
+                bowl = "false"
+
+
+            string += condition.split(" ")[1] + "(?" + condition.split(" ")[0] +  ", " + bowl + ") ^ "
+
+
+        string = string [:-2] + " -> "
+
+        for task in tasks:
+            string += "task(?" + task.split(" ")[0] + ", " + '?' + task.split(" ")[1] + ") ^ "
+
+
+        string = string[:-2]
+
+        strings.append(string)
+
+    return strings
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+def print_swrl_rules_to_file(paths):
+
+    swrl_rules = []
+
+    for i, path in enumerate(paths, 1):
+
+        rule_name = "rule_" + str(i)
+
+        conditions = []
+        answers = []
+        tasks = []
+
+
+        for step in path:
+            
+            key = next(iter(step))
+            
+            value = step[key]
+
+            if key =="condition":
+                conditions.append(value[:-1])
+            if key =="answer":
+                answers.append(value)
+            if key =="task":
+                tasks.append(value)
+
+        body_atoms = ""
+
+        for condition, answer in zip(conditions, answers):
+
+            body_atom = """<swrl:DatavaluedPropertyAtom>
+                                    <swrl:propertyPredicate rdf:resource="{condition_name}"/>
+                                    <swrl:argument1 rdf:resource="#?{actor_name}"/>
+                                    <swrl:argument2 rdf:datatype="&xsd;boolean">{condition_bool}</swrl:argument2>
+                                </swrl:DatavaluedPropertyAtom>""".format(condition_name=condition.split(" ")[1], actor_name=condition.split(" ")[0], condition_bool="true" if answer == "Yes" else "false")
+
+            body_atoms += body_atom
+
+        head_atoms = ""
+
+        for task in tasks:
+
+            head_atom = """<swrl:DatavaluedPropertyAtom>
+                                    <swrl:propertyPredicate rdf:resource="#task"/>
+                                    <swrl:argument1 rdf:resource="#?{actor_name}"/>
+                                    <owlx:DataValue owlx:datatype="&xsd;string">{task_name}</owlx:DataValue>
+                                </swrl:DatavaluedPropertyAtom>""".format(task_name=task.split(" ")[1], actor_name=task.split(" ")[0])
+        
+            head_atoms += head_atom + "\n"
+
+
+        
+        swrl_rule = """<ruleml:imp>
+                            <ruleml:_rlab ruleml:href="#{rule_name_var}"/>
+                            <ruleml:_body> 
+                                {body_atoms_var}
+                            </ruleml:_body> 
+                            <ruleml:_head> 
+                                {head_atoms_var}
+                            </ruleml:_head> 
+                        </ruleml:imp>""".format(rule_name_var=rule_name, body_atoms_var=body_atoms, head_atoms_var=head_atoms)                                          
+
+        swrl_rules.append(swrl_rule)
+
+    with open("swrl_rules.txt", "w", encoding="utf-8") as f:
+        for i, swrl_rule in enumerate(swrl_rules):
+            f.write("#PATH " + str(i+1) + " " + "\n" + swrl_rule + "\n\n\n")    
+
+
+
+
+
+
+
+
+
 if __name__ == "__main__":
-    bpmn_file = "interaction.bpmn"
+    bpmn_file = "example.bpmn"
 
     graph = parse_bpmn(bpmn_file)
     paths = enumerate_paths(graph)
-    print(paths)
-    pretty_print_paths(paths)
-    print(simple_paths_save(paths))
 
-    human_strings = create_human_readable_swrl(simple_paths_save(paths))
-    [print(human_string) for human_string in human_strings]
-
-
-
-
-
-
-
-def create_swrl(paths):
-
-    template_str = """ <ruleml:imp>
-                            <ruleml:_rlab ruleml:href="#example1"/>
-                            <ruleml:_body> 
-                                <swrl:DatavaluedPropertyAtom>
-                                    <swrl:propertyPredicate rdf:resource="#task"/>
-                                    <swrl:argument1 rdf:resource="#?x"/>
-                                    <owlx:DataValue owlx:datatype="&xsd;string">Marking Obligation</owlx:DataValue>
-                                </swrl:DatavaluedPropertyAtom>
-                                <swrl:DatavaluedPropertyAtom>
-                                    <swrl:propertyPredicate rdf:resource="#justEditing"/>
-                                    <swrl:argument1 rdf:resource="#?x"/>
-                                    <swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
-                                </swrl:DatavaluedPropertyAtom>
-                            </ruleml:_body> 
-                            <ruleml:_head> 
-                                <swrl:DatavaluedPropertyAtom>
-                                    <swrl:propertyPredicate rdf:resource="#task"/>
-                                    <swrl:argument1 rdf:resource="#?x"/>
-                                    <owlx:DataValue owlx:datatype="&xsd;string">Volutary codes of conduct</owlx:DataValue>
-                                </swrl:DatavaluedPropertyAtom>
-                            </ruleml:_head> 
-                            </ruleml:imp>"""
-    
-
-    #for i, path in enumerate(paths, 1):
-
-    #    rule_name = "rule_" + str(i)
-
+    print_swrl_rules_to_file(paths)
