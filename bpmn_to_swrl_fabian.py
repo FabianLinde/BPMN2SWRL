@@ -101,7 +101,6 @@ def enumerate_paths(graph):
     for start in graph.start_events:
         dfs(start, set(), [])
 
-   # return paths
 
     simple_paths = []
 
@@ -220,7 +219,13 @@ def print_swrl_rules_to_file(paths, filename="swrl_rules.txt"):
 
 
 if __name__ == "__main__":
-    bpmn_file = "context.bpmn"
+
+    import sys
+
+    bpmn_file = sys.argv[1]
+    #output_file = sys.argv[2] if len(sys.argv) > 2 else None
+
+    #bpmn_file = "example.bpmn"
 
     graph = parse_bpmn(bpmn_file)
     paths = enumerate_paths(graph)
