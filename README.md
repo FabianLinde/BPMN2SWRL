@@ -15,7 +15,7 @@ This will output a file title input_swrl_rules.txt.
 
 ---
 
-## Alternative: SWI-Prolog Pipeline (Meme's Implementation)
+## Alternative: SWI-Prolog Pipeline (Meem's Implementation)
 Files: `swi_converter.py` and `swrl_executable.py`
 
 An alternative converter using Kowalski's SWI-Prolog/LPS for parsing Logical English.
