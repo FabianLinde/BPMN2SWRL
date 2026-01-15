@@ -28,7 +28,7 @@
       <bpmn:outgoing>Flow_1ruinaa</bpmn:outgoing>
     </bpmn:task>
     <bpmn:sequenceFlow id="Flow_1ouz4t2" name="No" sourceRef="Gateway_1xceh77" targetRef="Activity_0xu4bra" />
-    <bpmn:exclusiveGateway id="Gateway_01xmkgr" name="AIsystem interactsWithPeople">
+    <bpmn:exclusiveGateway id="Gateway_01xmkgr" name="AIsystem interactsWithPeople?">
       <bpmn:incoming>Flow_0bynfe5</bpmn:incoming>
       <bpmn:outgoing>Flow_1t9qr1d</bpmn:outgoing>
       <bpmn:outgoing>Flow_1rlqvu0</bpmn:outgoing>
