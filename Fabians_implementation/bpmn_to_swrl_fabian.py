@@ -226,13 +226,14 @@ if __name__ == "__main__":
     import sys
 
     bpmn_file = sys.argv[1]
+    output_file = sys.argv[2]
 
 
     graph = parse_bpmn(bpmn_file)
     paths = enumerate_paths(graph)
 
 
-    print_swrl_rules_to_file(paths, bpmn_file.replace(".bpmn", "_swrl_rules.txt"))
+    print_swrl_rules_to_file(paths, output_file)
 
 
 

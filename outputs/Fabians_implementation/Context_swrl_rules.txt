@@ -1,0 +1,742 @@
+#PATH 1 
+#Human-readable SWRL: usedForCriminalOffencePrediction?(?AIsystem) ^ CriminalOffencePredictionBasedOnPreviousOffences?(?AIsystem) ^ not(offersRealTimeBiometricIdentificationForLawPurposes?(?AIsystem)) ^ not(infersBiometricsForPersonalInfoUse?(?AIsystem)) ^ infersEmotionInEducationOrWorkplaceUse?(?AIsystem) ^ not(infersEmotionForMedicalOrSafetyReasons?(?AIsystem))  -> task(?BPMNtool, ?printMessage:BANNED) 
+
+ 						<ruleml:imp>
+                        	<ruleml:_rlab ruleml:href="#rule_1"/>
+                        		<ruleml:_body> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="usedForCriminalOffencePrediction?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="CriminalOffencePredictionBasedOnPreviousOffences?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="offersRealTimeBiometricIdentificationForLawPurposes?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">false</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="infersBiometricsForPersonalInfoUse?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">false</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="infersEmotionInEducationOrWorkplaceUse?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="infersEmotionForMedicalOrSafetyReasons?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">false</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_body> 
+                        		<ruleml:_head> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="#task"/>
+                            				<swrl:argument1 rdf:resource="#?BPMNtool"/>
+                            				<owlx:DataValue owlx:datatype="&xsd;string">printMessage:BANNED</owlx:DataValue>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_head> 
+                        </ruleml:imp>
+
+
+#PATH 2 
+#Human-readable SWRL: usedForCriminalOffencePrediction?(?AIsystem) ^ CriminalOffencePredictionBasedOnPreviousOffences?(?AIsystem) ^ not(offersRealTimeBiometricIdentificationForLawPurposes?(?AIsystem)) ^ infersBiometricsForPersonalInfoUse?(?AIsystem) ^ biometricsLawfullyAcquired?(?AIsystem) ^ infersEmotionInEducationOrWorkplaceUse?(?AIsystem) ^ not(infersEmotionForMedicalOrSafetyReasons?(?AIsystem))  -> task(?BPMNtool, ?printMessage:BANNED) 
+
+ 						<ruleml:imp>
+                        	<ruleml:_rlab ruleml:href="#rule_2"/>
+                        		<ruleml:_body> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="usedForCriminalOffencePrediction?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="CriminalOffencePredictionBasedOnPreviousOffences?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="offersRealTimeBiometricIdentificationForLawPurposes?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">false</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="infersBiometricsForPersonalInfoUse?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="biometricsLawfullyAcquired?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="infersEmotionInEducationOrWorkplaceUse?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="infersEmotionForMedicalOrSafetyReasons?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">false</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_body> 
+                        		<ruleml:_head> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="#task"/>
+                            				<swrl:argument1 rdf:resource="#?BPMNtool"/>
+                            				<owlx:DataValue owlx:datatype="&xsd;string">printMessage:BANNED</owlx:DataValue>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_head> 
+                        </ruleml:imp>
+
+
+#PATH 3 
+#Human-readable SWRL: usedForCriminalOffencePrediction?(?AIsystem) ^ CriminalOffencePredictionBasedOnPreviousOffences?(?AIsystem) ^ not(offersRealTimeBiometricIdentificationForLawPurposes?(?AIsystem)) ^ infersBiometricsForPersonalInfoUse?(?AIsystem) ^ not(biometricsLawfullyAcquired?(?AIsystem))  -> task(?BPMNtool, ?printMessage:BANNED) 
+
+ 						<ruleml:imp>
+                        	<ruleml:_rlab ruleml:href="#rule_3"/>
+                        		<ruleml:_body> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="usedForCriminalOffencePrediction?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="CriminalOffencePredictionBasedOnPreviousOffences?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="offersRealTimeBiometricIdentificationForLawPurposes?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">false</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="infersBiometricsForPersonalInfoUse?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="biometricsLawfullyAcquired?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">false</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_body> 
+                        		<ruleml:_head> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="#task"/>
+                            				<swrl:argument1 rdf:resource="#?BPMNtool"/>
+                            				<owlx:DataValue owlx:datatype="&xsd;string">printMessage:BANNED</owlx:DataValue>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_head> 
+                        </ruleml:imp>
+
+
+#PATH 4 
+#Human-readable SWRL: usedForCriminalOffencePrediction?(?AIsystem) ^ CriminalOffencePredictionBasedOnPreviousOffences?(?AIsystem) ^ offersRealTimeBiometricIdentificationForLawPurposes?(?AIsystem) ^ realTimeBiometricIdentificationForSpecificPurposes?(?AIsystem) ^ not(realTimeBiometricIdentificationAuthorizedThroughJudicialAuthority?(?AIsystem))  -> task(?BPMNtool, ?printMessage:BANNED) 
+
+ 						<ruleml:imp>
+                        	<ruleml:_rlab ruleml:href="#rule_4"/>
+                        		<ruleml:_body> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="usedForCriminalOffencePrediction?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="CriminalOffencePredictionBasedOnPreviousOffences?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="offersRealTimeBiometricIdentificationForLawPurposes?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="realTimeBiometricIdentificationForSpecificPurposes?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="realTimeBiometricIdentificationAuthorizedThroughJudicialAuthority?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">false</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_body> 
+                        		<ruleml:_head> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="#task"/>
+                            				<swrl:argument1 rdf:resource="#?BPMNtool"/>
+                            				<owlx:DataValue owlx:datatype="&xsd;string">printMessage:BANNED</owlx:DataValue>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_head> 
+                        </ruleml:imp>
+
+
+#PATH 5 
+#Human-readable SWRL: usedForCriminalOffencePrediction?(?AIsystem) ^ CriminalOffencePredictionBasedOnPreviousOffences?(?AIsystem) ^ offersRealTimeBiometricIdentificationForLawPurposes?(?AIsystem) ^ realTimeBiometricIdentificationForSpecificPurposes?(?AIsystem) ^ realTimeBiometricIdentificationAuthorizedThroughJudicialAuthority?(?AIsystem) ^ not(infersBiometricsForPersonalInfoUse?(?AIsystem)) ^ infersEmotionInEducationOrWorkplaceUse?(?AIsystem) ^ not(infersEmotionForMedicalOrSafetyReasons?(?AIsystem))  -> task(?BPMNtool, ?printMessage:BANNED) 
+
+ 						<ruleml:imp>
+                        	<ruleml:_rlab ruleml:href="#rule_5"/>
+                        		<ruleml:_body> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="usedForCriminalOffencePrediction?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="CriminalOffencePredictionBasedOnPreviousOffences?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="offersRealTimeBiometricIdentificationForLawPurposes?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="realTimeBiometricIdentificationForSpecificPurposes?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="realTimeBiometricIdentificationAuthorizedThroughJudicialAuthority?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="infersBiometricsForPersonalInfoUse?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">false</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="infersEmotionInEducationOrWorkplaceUse?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="infersEmotionForMedicalOrSafetyReasons?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">false</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_body> 
+                        		<ruleml:_head> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="#task"/>
+                            				<swrl:argument1 rdf:resource="#?BPMNtool"/>
+                            				<owlx:DataValue owlx:datatype="&xsd;string">printMessage:BANNED</owlx:DataValue>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_head> 
+                        </ruleml:imp>
+
+
+#PATH 6 
+#Human-readable SWRL: usedForCriminalOffencePrediction?(?AIsystem) ^ CriminalOffencePredictionBasedOnPreviousOffences?(?AIsystem) ^ offersRealTimeBiometricIdentificationForLawPurposes?(?AIsystem) ^ realTimeBiometricIdentificationForSpecificPurposes?(?AIsystem) ^ realTimeBiometricIdentificationAuthorizedThroughJudicialAuthority?(?AIsystem) ^ infersBiometricsForPersonalInfoUse?(?AIsystem) ^ biometricsLawfullyAcquired?(?AIsystem) ^ infersEmotionInEducationOrWorkplaceUse?(?AIsystem) ^ not(infersEmotionForMedicalOrSafetyReasons?(?AIsystem))  -> task(?BPMNtool, ?printMessage:BANNED) 
+
+ 						<ruleml:imp>
+                        	<ruleml:_rlab ruleml:href="#rule_6"/>
+                        		<ruleml:_body> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="usedForCriminalOffencePrediction?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="CriminalOffencePredictionBasedOnPreviousOffences?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="offersRealTimeBiometricIdentificationForLawPurposes?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="realTimeBiometricIdentificationForSpecificPurposes?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="realTimeBiometricIdentificationAuthorizedThroughJudicialAuthority?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="infersBiometricsForPersonalInfoUse?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="biometricsLawfullyAcquired?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="infersEmotionInEducationOrWorkplaceUse?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="infersEmotionForMedicalOrSafetyReasons?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">false</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_body> 
+                        		<ruleml:_head> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="#task"/>
+                            				<swrl:argument1 rdf:resource="#?BPMNtool"/>
+                            				<owlx:DataValue owlx:datatype="&xsd;string">printMessage:BANNED</owlx:DataValue>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_head> 
+                        </ruleml:imp>
+
+
+#PATH 7 
+#Human-readable SWRL: usedForCriminalOffencePrediction?(?AIsystem) ^ CriminalOffencePredictionBasedOnPreviousOffences?(?AIsystem) ^ offersRealTimeBiometricIdentificationForLawPurposes?(?AIsystem) ^ realTimeBiometricIdentificationForSpecificPurposes?(?AIsystem) ^ realTimeBiometricIdentificationAuthorizedThroughJudicialAuthority?(?AIsystem) ^ infersBiometricsForPersonalInfoUse?(?AIsystem) ^ not(biometricsLawfullyAcquired?(?AIsystem))  -> task(?BPMNtool, ?printMessage:BANNED) 
+
+ 						<ruleml:imp>
+                        	<ruleml:_rlab ruleml:href="#rule_7"/>
+                        		<ruleml:_body> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="usedForCriminalOffencePrediction?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="CriminalOffencePredictionBasedOnPreviousOffences?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="offersRealTimeBiometricIdentificationForLawPurposes?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="realTimeBiometricIdentificationForSpecificPurposes?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="realTimeBiometricIdentificationAuthorizedThroughJudicialAuthority?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="infersBiometricsForPersonalInfoUse?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="biometricsLawfullyAcquired?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">false</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_body> 
+                        		<ruleml:_head> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="#task"/>
+                            				<swrl:argument1 rdf:resource="#?BPMNtool"/>
+                            				<owlx:DataValue owlx:datatype="&xsd;string">printMessage:BANNED</owlx:DataValue>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_head> 
+                        </ruleml:imp>
+
+
+#PATH 8 
+#Human-readable SWRL: usedForCriminalOffencePrediction?(?AIsystem) ^ CriminalOffencePredictionBasedOnPreviousOffences?(?AIsystem) ^ offersRealTimeBiometricIdentificationForLawPurposes?(?AIsystem) ^ not(realTimeBiometricIdentificationForSpecificPurposes?(?AIsystem))  -> task(?BPMNtool, ?printMessage:BANNED) 
+
+ 						<ruleml:imp>
+                        	<ruleml:_rlab ruleml:href="#rule_8"/>
+                        		<ruleml:_body> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="usedForCriminalOffencePrediction?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="CriminalOffencePredictionBasedOnPreviousOffences?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="offersRealTimeBiometricIdentificationForLawPurposes?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="realTimeBiometricIdentificationForSpecificPurposes?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">false</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_body> 
+                        		<ruleml:_head> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="#task"/>
+                            				<swrl:argument1 rdf:resource="#?BPMNtool"/>
+                            				<owlx:DataValue owlx:datatype="&xsd;string">printMessage:BANNED</owlx:DataValue>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_head> 
+                        </ruleml:imp>
+
+
+#PATH 9 
+#Human-readable SWRL: not(usedForCriminalOffencePrediction?(?AIsystem)) ^ not(offersRealTimeBiometricIdentificationForLawPurposes?(?AIsystem)) ^ not(infersBiometricsForPersonalInfoUse?(?AIsystem)) ^ infersEmotionInEducationOrWorkplaceUse?(?AIsystem) ^ not(infersEmotionForMedicalOrSafetyReasons?(?AIsystem))  -> task(?BPMNtool, ?printMessage:BANNED) 
+
+ 						<ruleml:imp>
+                        	<ruleml:_rlab ruleml:href="#rule_9"/>
+                        		<ruleml:_body> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="usedForCriminalOffencePrediction?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">false</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="offersRealTimeBiometricIdentificationForLawPurposes?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">false</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="infersBiometricsForPersonalInfoUse?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">false</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="infersEmotionInEducationOrWorkplaceUse?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="infersEmotionForMedicalOrSafetyReasons?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">false</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_body> 
+                        		<ruleml:_head> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="#task"/>
+                            				<swrl:argument1 rdf:resource="#?BPMNtool"/>
+                            				<owlx:DataValue owlx:datatype="&xsd;string">printMessage:BANNED</owlx:DataValue>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_head> 
+                        </ruleml:imp>
+
+
+#PATH 10 
+#Human-readable SWRL: not(usedForCriminalOffencePrediction?(?AIsystem)) ^ not(offersRealTimeBiometricIdentificationForLawPurposes?(?AIsystem)) ^ infersBiometricsForPersonalInfoUse?(?AIsystem) ^ biometricsLawfullyAcquired?(?AIsystem) ^ infersEmotionInEducationOrWorkplaceUse?(?AIsystem) ^ not(infersEmotionForMedicalOrSafetyReasons?(?AIsystem))  -> task(?BPMNtool, ?printMessage:BANNED) 
+
+ 						<ruleml:imp>
+                        	<ruleml:_rlab ruleml:href="#rule_10"/>
+                        		<ruleml:_body> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="usedForCriminalOffencePrediction?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">false</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="offersRealTimeBiometricIdentificationForLawPurposes?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">false</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="infersBiometricsForPersonalInfoUse?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="biometricsLawfullyAcquired?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="infersEmotionInEducationOrWorkplaceUse?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="infersEmotionForMedicalOrSafetyReasons?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">false</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_body> 
+                        		<ruleml:_head> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="#task"/>
+                            				<swrl:argument1 rdf:resource="#?BPMNtool"/>
+                            				<owlx:DataValue owlx:datatype="&xsd;string">printMessage:BANNED</owlx:DataValue>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_head> 
+                        </ruleml:imp>
+
+
+#PATH 11 
+#Human-readable SWRL: not(usedForCriminalOffencePrediction?(?AIsystem)) ^ not(offersRealTimeBiometricIdentificationForLawPurposes?(?AIsystem)) ^ infersBiometricsForPersonalInfoUse?(?AIsystem) ^ not(biometricsLawfullyAcquired?(?AIsystem))  -> task(?BPMNtool, ?printMessage:BANNED) 
+
+ 						<ruleml:imp>
+                        	<ruleml:_rlab ruleml:href="#rule_11"/>
+                        		<ruleml:_body> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="usedForCriminalOffencePrediction?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">false</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="offersRealTimeBiometricIdentificationForLawPurposes?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">false</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="infersBiometricsForPersonalInfoUse?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="biometricsLawfullyAcquired?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">false</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_body> 
+                        		<ruleml:_head> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="#task"/>
+                            				<swrl:argument1 rdf:resource="#?BPMNtool"/>
+                            				<owlx:DataValue owlx:datatype="&xsd;string">printMessage:BANNED</owlx:DataValue>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_head> 
+                        </ruleml:imp>
+
+
+#PATH 12 
+#Human-readable SWRL: not(usedForCriminalOffencePrediction?(?AIsystem)) ^ offersRealTimeBiometricIdentificationForLawPurposes?(?AIsystem) ^ realTimeBiometricIdentificationForSpecificPurposes?(?AIsystem) ^ not(realTimeBiometricIdentificationAuthorizedThroughJudicialAuthority?(?AIsystem))  -> task(?BPMNtool, ?printMessage:BANNED) 
+
+ 						<ruleml:imp>
+                        	<ruleml:_rlab ruleml:href="#rule_12"/>
+                        		<ruleml:_body> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="usedForCriminalOffencePrediction?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">false</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="offersRealTimeBiometricIdentificationForLawPurposes?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="realTimeBiometricIdentificationForSpecificPurposes?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="realTimeBiometricIdentificationAuthorizedThroughJudicialAuthority?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">false</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_body> 
+                        		<ruleml:_head> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="#task"/>
+                            				<swrl:argument1 rdf:resource="#?BPMNtool"/>
+                            				<owlx:DataValue owlx:datatype="&xsd;string">printMessage:BANNED</owlx:DataValue>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_head> 
+                        </ruleml:imp>
+
+
+#PATH 13 
+#Human-readable SWRL: not(usedForCriminalOffencePrediction?(?AIsystem)) ^ offersRealTimeBiometricIdentificationForLawPurposes?(?AIsystem) ^ realTimeBiometricIdentificationForSpecificPurposes?(?AIsystem) ^ realTimeBiometricIdentificationAuthorizedThroughJudicialAuthority?(?AIsystem) ^ not(infersBiometricsForPersonalInfoUse?(?AIsystem)) ^ infersEmotionInEducationOrWorkplaceUse?(?AIsystem) ^ not(infersEmotionForMedicalOrSafetyReasons?(?AIsystem))  -> task(?BPMNtool, ?printMessage:BANNED) 
+
+ 						<ruleml:imp>
+                        	<ruleml:_rlab ruleml:href="#rule_13"/>
+                        		<ruleml:_body> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="usedForCriminalOffencePrediction?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">false</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="offersRealTimeBiometricIdentificationForLawPurposes?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="realTimeBiometricIdentificationForSpecificPurposes?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="realTimeBiometricIdentificationAuthorizedThroughJudicialAuthority?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="infersBiometricsForPersonalInfoUse?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">false</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="infersEmotionInEducationOrWorkplaceUse?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="infersEmotionForMedicalOrSafetyReasons?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">false</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_body> 
+                        		<ruleml:_head> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="#task"/>
+                            				<swrl:argument1 rdf:resource="#?BPMNtool"/>
+                            				<owlx:DataValue owlx:datatype="&xsd;string">printMessage:BANNED</owlx:DataValue>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_head> 
+                        </ruleml:imp>
+
+
+#PATH 14 
+#Human-readable SWRL: not(usedForCriminalOffencePrediction?(?AIsystem)) ^ offersRealTimeBiometricIdentificationForLawPurposes?(?AIsystem) ^ realTimeBiometricIdentificationForSpecificPurposes?(?AIsystem) ^ realTimeBiometricIdentificationAuthorizedThroughJudicialAuthority?(?AIsystem) ^ infersBiometricsForPersonalInfoUse?(?AIsystem) ^ biometricsLawfullyAcquired?(?AIsystem) ^ infersEmotionInEducationOrWorkplaceUse?(?AIsystem) ^ not(infersEmotionForMedicalOrSafetyReasons?(?AIsystem))  -> task(?BPMNtool, ?printMessage:BANNED) 
+
+ 						<ruleml:imp>
+                        	<ruleml:_rlab ruleml:href="#rule_14"/>
+                        		<ruleml:_body> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="usedForCriminalOffencePrediction?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">false</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="offersRealTimeBiometricIdentificationForLawPurposes?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="realTimeBiometricIdentificationForSpecificPurposes?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="realTimeBiometricIdentificationAuthorizedThroughJudicialAuthority?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="infersBiometricsForPersonalInfoUse?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="biometricsLawfullyAcquired?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="infersEmotionInEducationOrWorkplaceUse?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="infersEmotionForMedicalOrSafetyReasons?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">false</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_body> 
+                        		<ruleml:_head> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="#task"/>
+                            				<swrl:argument1 rdf:resource="#?BPMNtool"/>
+                            				<owlx:DataValue owlx:datatype="&xsd;string">printMessage:BANNED</owlx:DataValue>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_head> 
+                        </ruleml:imp>
+
+
+#PATH 15 
+#Human-readable SWRL: not(usedForCriminalOffencePrediction?(?AIsystem)) ^ offersRealTimeBiometricIdentificationForLawPurposes?(?AIsystem) ^ realTimeBiometricIdentificationForSpecificPurposes?(?AIsystem) ^ realTimeBiometricIdentificationAuthorizedThroughJudicialAuthority?(?AIsystem) ^ infersBiometricsForPersonalInfoUse?(?AIsystem) ^ not(biometricsLawfullyAcquired?(?AIsystem))  -> task(?BPMNtool, ?printMessage:BANNED) 
+
+ 						<ruleml:imp>
+                        	<ruleml:_rlab ruleml:href="#rule_15"/>
+                        		<ruleml:_body> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="usedForCriminalOffencePrediction?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">false</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="offersRealTimeBiometricIdentificationForLawPurposes?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="realTimeBiometricIdentificationForSpecificPurposes?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="realTimeBiometricIdentificationAuthorizedThroughJudicialAuthority?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="infersBiometricsForPersonalInfoUse?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="biometricsLawfullyAcquired?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">false</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_body> 
+                        		<ruleml:_head> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="#task"/>
+                            				<swrl:argument1 rdf:resource="#?BPMNtool"/>
+                            				<owlx:DataValue owlx:datatype="&xsd;string">printMessage:BANNED</owlx:DataValue>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_head> 
+                        </ruleml:imp>
+
+
+#PATH 16 
+#Human-readable SWRL: not(usedForCriminalOffencePrediction?(?AIsystem)) ^ offersRealTimeBiometricIdentificationForLawPurposes?(?AIsystem) ^ not(realTimeBiometricIdentificationForSpecificPurposes?(?AIsystem))  -> task(?BPMNtool, ?printMessage:BANNED) 
+
+ 						<ruleml:imp>
+                        	<ruleml:_rlab ruleml:href="#rule_16"/>
+                        		<ruleml:_body> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="usedForCriminalOffencePrediction?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">false</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="offersRealTimeBiometricIdentificationForLawPurposes?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="realTimeBiometricIdentificationForSpecificPurposes?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">false</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_body> 
+                        		<ruleml:_head> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="#task"/>
+                            				<swrl:argument1 rdf:resource="#?BPMNtool"/>
+                            				<owlx:DataValue owlx:datatype="&xsd;string">printMessage:BANNED</owlx:DataValue>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_head> 
+                        </ruleml:imp>
+
+
