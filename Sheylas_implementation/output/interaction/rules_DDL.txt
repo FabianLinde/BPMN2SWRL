@@ -1,0 +1,53 @@
+=== REDUCED NODES ===
+- Event_07dxe80      | endEvent         | Obligations Report
+- Gateway_01xmkgr    | exclusiveGateway | AIsystem interactsWithPeople?
+- Gateway_1fgs5kb    | exclusiveGateway | AIsystem onlyEditsSyntheticContent?
+- Gateway_1xceh77    | exclusiveGateway | AIsystem generatesSyntethicContent?
+- StartEvent_1       | startEvent       | 
+
+=== REDUCED EDGES ===
+Gateway_01xmkgr [No] -> Event_07dxe80 | src='AIsystem interactsWithPeople?' dst='Obligations Report' | tasks: AIprovider FollowVoluntaryCodeOfConduct | via_flows: Flow_1rlqvu0, Flow_1ruinaa, Flow_0sfbwbc
+Gateway_01xmkgr [Yes] -> Event_07dxe80 | src='AIsystem interactsWithPeople?' dst='Obligations Report' | tasks: AIprovider hasInformationObligation, BPMNtool printMessage:LIMITED_RISK | via_flows: Flow_1t9qr1d, Flow_0zjnbrr, Flow_1sj61eb, Flow_0sfbwbc
+Gateway_1fgs5kb [No] -> Event_07dxe80 | src='AIsystem onlyEditsSyntheticContent?' dst='Obligations Report' | tasks: BPMNtool printMessage:LIMITED_RISK | via_flows: Flow_1gqmdep, Flow_16ehfck, Flow_0sfbwbc
+Gateway_1fgs5kb [Yes] -> Event_07dxe80 | src='AIsystem onlyEditsSyntheticContent?' dst='Obligations Report' | tasks: AIprovider FollowVoluntaryCodeOfConduct | via_flows: Flow_1ped6bm, Flow_1ruinaa, Flow_0sfbwbc
+Gateway_1xceh77 [No] -> Event_07dxe80 | src='AIsystem generatesSyntethicContent?' dst='Obligations Report' | tasks: AIprovider FollowVoluntaryCodeOfConduct | via_flows: Flow_1ouz4t2, Flow_1ruinaa, Flow_0sfbwbc
+Gateway_1xceh77 [Yes] -> Gateway_1fgs5kb | src='AIsystem generatesSyntethicContent?' dst='AIsystem onlyEditsSyntheticContent?' | tasks: AIprovider hasMarkingObligation | via_flows: Flow_0w6wtyt, Flow_1cf3eas
+StartEvent_1 -> Gateway_01xmkgr | src='' dst='AIsystem interactsWithPeople?' | tasks: (no tasks) | via_flows: Flow_1km70h6, Flow_0bynfe5
+StartEvent_1 -> Gateway_1xceh77 | src='' dst='AIsystem generatesSyntethicContent?' | tasks: (no tasks) | via_flows: Flow_1km70h6, Flow_0ubcgvn
+
+=== START → END PATHS (5) ===
+
+Path 1:
+  StartEvent_1 -> Gateway_01xmkgr | tasks: (no tasks)
+  Gateway_01xmkgr [Yes] -> Event_07dxe80 | tasks: AIprovider hasInformationObligation, BPMNtool printMessage:LIMITED_RISK
+
+Path 2:
+  StartEvent_1 -> Gateway_01xmkgr | tasks: (no tasks)
+  Gateway_01xmkgr [No] -> Event_07dxe80 | tasks: AIprovider FollowVoluntaryCodeOfConduct
+
+Path 3:
+  StartEvent_1 -> Gateway_1xceh77 | tasks: (no tasks)
+  Gateway_1xceh77 [Yes] -> Gateway_1fgs5kb | tasks: AIprovider hasMarkingObligation
+  Gateway_1fgs5kb [Yes] -> Event_07dxe80 | tasks: AIprovider FollowVoluntaryCodeOfConduct
+
+Path 4:
+  StartEvent_1 -> Gateway_1xceh77 | tasks: (no tasks)
+  Gateway_1xceh77 [Yes] -> Gateway_1fgs5kb | tasks: AIprovider hasMarkingObligation
+  Gateway_1fgs5kb [No] -> Event_07dxe80 | tasks: BPMNtool printMessage:LIMITED_RISK
+
+Path 5:
+  StartEvent_1 -> Gateway_1xceh77 | tasks: (no tasks)
+  Gateway_1xceh77 [No] -> Event_07dxe80 | tasks: AIprovider FollowVoluntaryCodeOfConduct
+
+% RULES
+r1: AIsystem_interactsWithPeople => O(AIprovider_hasInformationObligation) & O(BPMNtool_printMessageLIMITED_RISK).
+r2: not AIsystem_interactsWithPeople => O(AIprovider_FollowVoluntaryCodeOfConduct).
+r3: AIsystem_generatesSyntethicContent, AIsystem_onlyEditsSyntheticContent => O(AIprovider_hasMarkingObligation) & O(AIprovider_FollowVoluntaryCodeOfConduct).
+r4: AIsystem_generatesSyntethicContent, not AIsystem_onlyEditsSyntheticContent => O(AIprovider_hasMarkingObligation) & O(BPMNtool_printMessageLIMITED_RISK).
+r5: not AIsystem_generatesSyntethicContent => O(AIprovider_FollowVoluntaryCodeOfConduct).
+
+% SUPERIORITY
+r1 > r2.
+r2 > r3.
+r3 > r4.
+r4 > r5.

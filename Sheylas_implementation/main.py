@@ -41,6 +41,7 @@ from Sheylas_implementation.path_extractor import enumerate_paths_and_build_ir
 from Sheylas_implementation.ddl_exporter import rule_ir_to_ddl
 
 from Sheylas_implementation.swrl_exporter import export_rules_to_owl
+from Sheylas_implementation.legalruleml_exporter import export_rules_to_legalruleml
 
 def _node_line(n: Node) -> str:
     return f"- {n.id:<18} | {n.type:<16} | {n.name}"
@@ -113,10 +114,18 @@ def main(argv: Optional[List[str]] = None) -> int:
     out_path.write_text("\n".join(out_lines).rstrip() + "\n", encoding="utf-8")
     print(f"Wrote: {out_path}")
 
+    print(superiority)
+
     export_rules_to_owl(
         rules_ir,
         out_file="rules_swrl.owl",
         base_iri="http://example.org/bpmn2rules",
+    )
+
+    export_rules_to_legalruleml(
+        rules_ir,
+        superiority,
+        out_file="rules_legalruleml.xml",
     )
 
 
