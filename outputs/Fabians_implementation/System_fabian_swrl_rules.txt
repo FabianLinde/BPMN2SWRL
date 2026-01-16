@@ -21,26 +21,9 @@
 
 
 #PATH 2 
-#Human-readable SWRL: not(aMathematicalOptimizationSystem?(?AIsystem)) ^ aMachineBasedAutonomousAndAdaptiveSystem?(?AIsystem)  -
+#Human-readable SWRL: In this path [ not(aMathematicalOptimizationSystem?(?AIsystem)) ^ aMachineBasedAutonomousAndAdaptiveSystem?(?AIsystem) ], no tasks are performed. Therefore, as no consequents arise, no SWRL rule is generated.
 
- 						<ruleml:imp>
-                        	<ruleml:_rlab ruleml:href="#rule_2"/>
-                        		<ruleml:_body> 
-                        			<swrl:DatavaluedPropertyAtom>
-                            				<swrl:propertyPredicate rdf:resource="aMathematicalOptimizationSystem?"/>
-                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
-                            				<swrl:argument2 rdf:datatype="&xsd;boolean">false</swrl:argument2>
-                            		</swrl:DatavaluedPropertyAtom>
-									<swrl:DatavaluedPropertyAtom>
-                            				<swrl:propertyPredicate rdf:resource="aMachineBasedAutonomousAndAdaptiveSystem?"/>
-                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
-                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
-                            		</swrl:DatavaluedPropertyAtom>
-                        		</ruleml:_body> 
-                        		<ruleml:_head> 
-                        			
-                        		</ruleml:_head> 
-                        </ruleml:imp>
+
 
 
 #PATH 3 
@@ -93,26 +76,9 @@
 
 
 #PATH 5 
-#Human-readable SWRL: not(aBasicDataProcessingSystem?(?AIsystem)) ^ aMachineBasedAutonomousAndAdaptiveSystem?(?AIsystem)  -
+#Human-readable SWRL: In this path [ not(aBasicDataProcessingSystem?(?AIsystem)) ^ aMachineBasedAutonomousAndAdaptiveSystem?(?AIsystem) ], no tasks are performed. Therefore, as no consequents arise, no SWRL rule is generated.
 
- 						<ruleml:imp>
-                        	<ruleml:_rlab ruleml:href="#rule_5"/>
-                        		<ruleml:_body> 
-                        			<swrl:DatavaluedPropertyAtom>
-                            				<swrl:propertyPredicate rdf:resource="aBasicDataProcessingSystem?"/>
-                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
-                            				<swrl:argument2 rdf:datatype="&xsd;boolean">false</swrl:argument2>
-                            		</swrl:DatavaluedPropertyAtom>
-									<swrl:DatavaluedPropertyAtom>
-                            				<swrl:propertyPredicate rdf:resource="aMachineBasedAutonomousAndAdaptiveSystem?"/>
-                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
-                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
-                            		</swrl:DatavaluedPropertyAtom>
-                        		</ruleml:_body> 
-                        		<ruleml:_head> 
-                        			
-                        		</ruleml:_head> 
-                        </ruleml:imp>
+
 
 
 #PATH 6 
@@ -165,26 +131,9 @@
 
 
 #PATH 8 
-#Human-readable SWRL: not(basedOnClassicalHeuristics?(?AIsystem)) ^ aMachineBasedAutonomousAndAdaptiveSystem?(?AIsystem)  -
+#Human-readable SWRL: In this path [ not(basedOnClassicalHeuristics?(?AIsystem)) ^ aMachineBasedAutonomousAndAdaptiveSystem?(?AIsystem) ], no tasks are performed. Therefore, as no consequents arise, no SWRL rule is generated.
 
- 						<ruleml:imp>
-                        	<ruleml:_rlab ruleml:href="#rule_8"/>
-                        		<ruleml:_body> 
-                        			<swrl:DatavaluedPropertyAtom>
-                            				<swrl:propertyPredicate rdf:resource="basedOnClassicalHeuristics?"/>
-                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
-                            				<swrl:argument2 rdf:datatype="&xsd;boolean">false</swrl:argument2>
-                            		</swrl:DatavaluedPropertyAtom>
-									<swrl:DatavaluedPropertyAtom>
-                            				<swrl:propertyPredicate rdf:resource="aMachineBasedAutonomousAndAdaptiveSystem?"/>
-                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
-                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
-                            		</swrl:DatavaluedPropertyAtom>
-                        		</ruleml:_body> 
-                        		<ruleml:_head> 
-                        			
-                        		</ruleml:_head> 
-                        </ruleml:imp>
+
 
 
 #PATH 9 
@@ -237,26 +186,9 @@
 
 
 #PATH 11 
-#Human-readable SWRL: not(aSimplePredictionSystem?(?AIsystem)) ^ aMachineBasedAutonomousAndAdaptiveSystem?(?AIsystem)  -
+#Human-readable SWRL: In this path [ not(aSimplePredictionSystem?(?AIsystem)) ^ aMachineBasedAutonomousAndAdaptiveSystem?(?AIsystem) ], no tasks are performed. Therefore, as no consequents arise, no SWRL rule is generated.
 
- 						<ruleml:imp>
-                        	<ruleml:_rlab ruleml:href="#rule_11"/>
-                        		<ruleml:_body> 
-                        			<swrl:DatavaluedPropertyAtom>
-                            				<swrl:propertyPredicate rdf:resource="aSimplePredictionSystem?"/>
-                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
-                            				<swrl:argument2 rdf:datatype="&xsd;boolean">false</swrl:argument2>
-                            		</swrl:DatavaluedPropertyAtom>
-									<swrl:DatavaluedPropertyAtom>
-                            				<swrl:propertyPredicate rdf:resource="aMachineBasedAutonomousAndAdaptiveSystem?"/>
-                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
-                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
-                            		</swrl:DatavaluedPropertyAtom>
-                        		</ruleml:_body> 
-                        		<ruleml:_head> 
-                        			
-                        		</ruleml:_head> 
-                        </ruleml:imp>
+
 
 
 #PATH 12 
