@@ -150,7 +150,7 @@ def print_swrl_rules_to_file(paths, filename="swrl_rules.txt"):
             value = step[key]
 
             if key =="condition":
-                conditions.append(value[:-1])
+                conditions.append(value)
             if key =="answer":
                 answers.append(value)
             if key =="task":
