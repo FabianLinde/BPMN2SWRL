@@ -173,7 +173,10 @@ def print_swrl_rules_to_file(paths, filename="swrl_rules.txt"):
 
             body_atoms += body_atom + "\n\t\t\t\t\t\t\t\t\t"
 
-            human_readable_swrl_rule += condition.split(" ")[1] + "(?" + condition.split(" ")[0] +  ", " + condition_bool + ") ^ "
+            if condition_bool == "true":
+                human_readable_swrl_rule += condition.split(" ")[1] + "(?" + condition.split(" ")[0] + ") ^ "
+            else:
+                human_readable_swrl_rule += "not(" + condition.split(" ")[1] + "(?" + condition.split(" ")[0] + ")) ^ "  
 
         head_atoms = ""
 
@@ -223,14 +226,12 @@ if __name__ == "__main__":
     import sys
 
     bpmn_file = sys.argv[1]
-    #output_file = sys.argv[2] if len(sys.argv) > 2 else None
 
-    #bpmn_file = "example.bpmn"
 
     graph = parse_bpmn(bpmn_file)
     paths = enumerate_paths(graph)
 
-    #[print(path) for path in paths]
+
     print_swrl_rules_to_file(paths, bpmn_file.replace(".bpmn", "_swrl_rules.txt"))
 
 
