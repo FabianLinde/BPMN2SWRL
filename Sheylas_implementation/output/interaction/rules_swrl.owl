@@ -11,14 +11,18 @@
 
   <owl:Ontology rdf:about="http://example.org/bpmn2rules"/>
 
-  <owl:DatatypeProperty rdf:about="http://example.org/bpmn2rules#generatesSyntethicContent"/>
-  <owl:DatatypeProperty rdf:about="http://example.org/bpmn2rules#interactsWithPeople"/>
-  <owl:DatatypeProperty rdf:about="http://example.org/bpmn2rules#onlyEditsSyntheticContent"/>
+  <owl:DatatypeProperty rdf:about="http://example.org/bpmn2rules#editing"/>
+  <owl:DatatypeProperty rdf:about="http://example.org/bpmn2rules#ofsynteticcontent"/>
   <owl:DatatypeProperty rdf:about="http://example.org/bpmn2rules#task"/>
+  <owl:DatatypeProperty rdf:about="http://example.org/bpmn2rules#withpeople"/>
 
-  <swrl:Variable rdf:about="http://example.org/bpmn2rules#var_AIprovider"/>
-  <swrl:Variable rdf:about="http://example.org/bpmn2rules#var_AIsystem"/>
-  <swrl:Variable rdf:about="http://example.org/bpmn2rules#var_BPMNtool"/>
+  <swrl:Variable rdf:about="http://example.org/bpmn2rules#var_Generation"/>
+  <swrl:Variable rdf:about="http://example.org/bpmn2rules#var_Info"/>
+  <swrl:Variable rdf:about="http://example.org/bpmn2rules#var_Interaction"/>
+  <swrl:Variable rdf:about="http://example.org/bpmn2rules#var_Just"/>
+  <swrl:Variable rdf:about="http://example.org/bpmn2rules#var_Marking"/>
+  <swrl:Variable rdf:about="http://example.org/bpmn2rules#var_Print"/>
+  <swrl:Variable rdf:about="http://example.org/bpmn2rules#var_Volutary"/>
 
   <!-- SWRL Rules -->
   <swrl:Imp rdf:about="http://example.org/bpmn2rules#r1">
@@ -26,8 +30,8 @@
         <swrl:AtomList>
           <rdf:first>
             <swrl:DatavaluedPropertyAtom>
-              <swrl:propertyPredicate rdf:resource="http://example.org/bpmn2rules#interactsWithPeople"/>
-              <swrl:argument1 rdf:resource="http://example.org/bpmn2rules#var_AIsystem"/>
+              <swrl:propertyPredicate rdf:resource="http://example.org/bpmn2rules#withpeople"/>
+              <swrl:argument1 rdf:resource="http://example.org/bpmn2rules#var_Interaction"/>
               <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl:argument2>
             </swrl:DatavaluedPropertyAtom>
           </rdf:first>
@@ -39,8 +43,8 @@
           <rdf:first>
             <swrl:DatavaluedPropertyAtom>
               <swrl:propertyPredicate rdf:resource="http://example.org/bpmn2rules#task"/>
-              <swrl:argument1 rdf:resource="http://example.org/bpmn2rules#var_AIprovider"/>
-              <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasInformationObligation</swrl:argument2>
+              <swrl:argument1 rdf:resource="http://example.org/bpmn2rules#var_Info"/>
+              <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obligation</swrl:argument2>
             </swrl:DatavaluedPropertyAtom>
           </rdf:first>
           <rdf:rest>
@@ -48,8 +52,8 @@
               <rdf:first>
                 <swrl:DatavaluedPropertyAtom>
                   <swrl:propertyPredicate rdf:resource="http://example.org/bpmn2rules#task"/>
-                  <swrl:argument1 rdf:resource="http://example.org/bpmn2rules#var_BPMNtool"/>
-                  <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">printMessage:LIMITED_RISK</swrl:argument2>
+                  <swrl:argument1 rdf:resource="http://example.org/bpmn2rules#var_Print"/>
+                  <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">message:LIMITEDRISK</swrl:argument2>
                 </swrl:DatavaluedPropertyAtom>
               </rdf:first>
               <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
@@ -64,8 +68,8 @@
         <swrl:AtomList>
           <rdf:first>
             <swrl:DatavaluedPropertyAtom>
-              <swrl:propertyPredicate rdf:resource="http://example.org/bpmn2rules#interactsWithPeople"/>
-              <swrl:argument1 rdf:resource="http://example.org/bpmn2rules#var_AIsystem"/>
+              <swrl:propertyPredicate rdf:resource="http://example.org/bpmn2rules#withpeople"/>
+              <swrl:argument1 rdf:resource="http://example.org/bpmn2rules#var_Interaction"/>
               <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</swrl:argument2>
             </swrl:DatavaluedPropertyAtom>
           </rdf:first>
@@ -77,8 +81,8 @@
           <rdf:first>
             <swrl:DatavaluedPropertyAtom>
               <swrl:propertyPredicate rdf:resource="http://example.org/bpmn2rules#task"/>
-              <swrl:argument1 rdf:resource="http://example.org/bpmn2rules#var_AIprovider"/>
-              <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FollowVoluntaryCodeOfConduct</swrl:argument2>
+              <swrl:argument1 rdf:resource="http://example.org/bpmn2rules#var_Volutary"/>
+              <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">codesofconduct</swrl:argument2>
             </swrl:DatavaluedPropertyAtom>
           </rdf:first>
           <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
@@ -91,8 +95,8 @@
         <swrl:AtomList>
           <rdf:first>
             <swrl:DatavaluedPropertyAtom>
-              <swrl:propertyPredicate rdf:resource="http://example.org/bpmn2rules#generatesSyntethicContent"/>
-              <swrl:argument1 rdf:resource="http://example.org/bpmn2rules#var_AIsystem"/>
+              <swrl:propertyPredicate rdf:resource="http://example.org/bpmn2rules#ofsynteticcontent"/>
+              <swrl:argument1 rdf:resource="http://example.org/bpmn2rules#var_Generation"/>
               <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl:argument2>
             </swrl:DatavaluedPropertyAtom>
           </rdf:first>
@@ -100,8 +104,8 @@
             <swrl:AtomList>
               <rdf:first>
                 <swrl:DatavaluedPropertyAtom>
-                  <swrl:propertyPredicate rdf:resource="http://example.org/bpmn2rules#onlyEditsSyntheticContent"/>
-                  <swrl:argument1 rdf:resource="http://example.org/bpmn2rules#var_AIsystem"/>
+                  <swrl:propertyPredicate rdf:resource="http://example.org/bpmn2rules#editing"/>
+                  <swrl:argument1 rdf:resource="http://example.org/bpmn2rules#var_Just"/>
                   <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl:argument2>
                 </swrl:DatavaluedPropertyAtom>
               </rdf:first>
@@ -115,8 +119,8 @@
           <rdf:first>
             <swrl:DatavaluedPropertyAtom>
               <swrl:propertyPredicate rdf:resource="http://example.org/bpmn2rules#task"/>
-              <swrl:argument1 rdf:resource="http://example.org/bpmn2rules#var_AIprovider"/>
-              <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasMarkingObligation</swrl:argument2>
+              <swrl:argument1 rdf:resource="http://example.org/bpmn2rules#var_Marking"/>
+              <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obligation</swrl:argument2>
             </swrl:DatavaluedPropertyAtom>
           </rdf:first>
           <rdf:rest>
@@ -124,8 +128,8 @@
               <rdf:first>
                 <swrl:DatavaluedPropertyAtom>
                   <swrl:propertyPredicate rdf:resource="http://example.org/bpmn2rules#task"/>
-                  <swrl:argument1 rdf:resource="http://example.org/bpmn2rules#var_AIprovider"/>
-                  <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FollowVoluntaryCodeOfConduct</swrl:argument2>
+                  <swrl:argument1 rdf:resource="http://example.org/bpmn2rules#var_Volutary"/>
+                  <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">codesofconduct</swrl:argument2>
                 </swrl:DatavaluedPropertyAtom>
               </rdf:first>
               <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
@@ -140,8 +144,8 @@
         <swrl:AtomList>
           <rdf:first>
             <swrl:DatavaluedPropertyAtom>
-              <swrl:propertyPredicate rdf:resource="http://example.org/bpmn2rules#generatesSyntethicContent"/>
-              <swrl:argument1 rdf:resource="http://example.org/bpmn2rules#var_AIsystem"/>
+              <swrl:propertyPredicate rdf:resource="http://example.org/bpmn2rules#ofsynteticcontent"/>
+              <swrl:argument1 rdf:resource="http://example.org/bpmn2rules#var_Generation"/>
               <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrl:argument2>
             </swrl:DatavaluedPropertyAtom>
           </rdf:first>
@@ -149,8 +153,8 @@
             <swrl:AtomList>
               <rdf:first>
                 <swrl:DatavaluedPropertyAtom>
-                  <swrl:propertyPredicate rdf:resource="http://example.org/bpmn2rules#onlyEditsSyntheticContent"/>
-                  <swrl:argument1 rdf:resource="http://example.org/bpmn2rules#var_AIsystem"/>
+                  <swrl:propertyPredicate rdf:resource="http://example.org/bpmn2rules#editing"/>
+                  <swrl:argument1 rdf:resource="http://example.org/bpmn2rules#var_Just"/>
                   <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</swrl:argument2>
                 </swrl:DatavaluedPropertyAtom>
               </rdf:first>
@@ -164,8 +168,8 @@
           <rdf:first>
             <swrl:DatavaluedPropertyAtom>
               <swrl:propertyPredicate rdf:resource="http://example.org/bpmn2rules#task"/>
-              <swrl:argument1 rdf:resource="http://example.org/bpmn2rules#var_AIprovider"/>
-              <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hasMarkingObligation</swrl:argument2>
+              <swrl:argument1 rdf:resource="http://example.org/bpmn2rules#var_Marking"/>
+              <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">obligation</swrl:argument2>
             </swrl:DatavaluedPropertyAtom>
           </rdf:first>
           <rdf:rest>
@@ -173,8 +177,8 @@
               <rdf:first>
                 <swrl:DatavaluedPropertyAtom>
                   <swrl:propertyPredicate rdf:resource="http://example.org/bpmn2rules#task"/>
-                  <swrl:argument1 rdf:resource="http://example.org/bpmn2rules#var_BPMNtool"/>
-                  <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">printMessage:LIMITED_RISK</swrl:argument2>
+                  <swrl:argument1 rdf:resource="http://example.org/bpmn2rules#var_Print"/>
+                  <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">message:LIMITEDRISK</swrl:argument2>
                 </swrl:DatavaluedPropertyAtom>
               </rdf:first>
               <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
@@ -189,8 +193,8 @@
         <swrl:AtomList>
           <rdf:first>
             <swrl:DatavaluedPropertyAtom>
-              <swrl:propertyPredicate rdf:resource="http://example.org/bpmn2rules#generatesSyntethicContent"/>
-              <swrl:argument1 rdf:resource="http://example.org/bpmn2rules#var_AIsystem"/>
+              <swrl:propertyPredicate rdf:resource="http://example.org/bpmn2rules#ofsynteticcontent"/>
+              <swrl:argument1 rdf:resource="http://example.org/bpmn2rules#var_Generation"/>
               <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</swrl:argument2>
             </swrl:DatavaluedPropertyAtom>
           </rdf:first>
@@ -202,8 +206,8 @@
           <rdf:first>
             <swrl:DatavaluedPropertyAtom>
               <swrl:propertyPredicate rdf:resource="http://example.org/bpmn2rules#task"/>
-              <swrl:argument1 rdf:resource="http://example.org/bpmn2rules#var_AIprovider"/>
-              <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FollowVoluntaryCodeOfConduct</swrl:argument2>
+              <swrl:argument1 rdf:resource="http://example.org/bpmn2rules#var_Volutary"/>
+              <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">codesofconduct</swrl:argument2>
             </swrl:DatavaluedPropertyAtom>
           </rdf:first>
           <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>

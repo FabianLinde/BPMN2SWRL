@@ -9,8 +9,8 @@
       <ruleml:Rule key="r1">
         <ruleml:if>
           <ruleml:Atom>
-            <ruleml:Rel>interactsWithPeople</ruleml:Rel>
-            <ruleml:Var>AIsystem</ruleml:Var>
+            <ruleml:Rel>withpeople</ruleml:Rel>
+            <ruleml:Var>Interaction</ruleml:Var>
             <ruleml:Data xsi:type="xs:boolean">true</ruleml:Data>
           </ruleml:Atom>
         </ruleml:if>
@@ -18,13 +18,13 @@
           <ruleml:And>
               <ruleml:Atom>
                 <ruleml:Rel>task</ruleml:Rel>
-                <ruleml:Var>AIprovider</ruleml:Var>
-                <ruleml:Data xsi:type="xs:string">hasInformationObligation</ruleml:Data>
+                <ruleml:Var>Info</ruleml:Var>
+                <ruleml:Data xsi:type="xs:string">obligation</ruleml:Data>
               </ruleml:Atom>
               <ruleml:Atom>
                 <ruleml:Rel>task</ruleml:Rel>
-                <ruleml:Var>BPMNtool</ruleml:Var>
-                <ruleml:Data xsi:type="xs:string">printMessage:LIMITED_RISK</ruleml:Data>
+                <ruleml:Var>Print</ruleml:Var>
+                <ruleml:Data xsi:type="xs:string">message:LIMITEDRISK</ruleml:Data>
               </ruleml:Atom>
           </ruleml:And>
         </ruleml:then>
@@ -35,16 +35,16 @@
       <ruleml:Rule key="r2">
         <ruleml:if>
           <ruleml:Atom>
-            <ruleml:Rel>interactsWithPeople</ruleml:Rel>
-            <ruleml:Var>AIsystem</ruleml:Var>
+            <ruleml:Rel>withpeople</ruleml:Rel>
+            <ruleml:Var>Interaction</ruleml:Var>
             <ruleml:Data xsi:type="xs:boolean">false</ruleml:Data>
           </ruleml:Atom>
         </ruleml:if>
         <ruleml:then>
           <ruleml:Atom>
             <ruleml:Rel>task</ruleml:Rel>
-            <ruleml:Var>AIprovider</ruleml:Var>
-            <ruleml:Data xsi:type="xs:string">FollowVoluntaryCodeOfConduct</ruleml:Data>
+            <ruleml:Var>Volutary</ruleml:Var>
+            <ruleml:Data xsi:type="xs:string">codesofconduct</ruleml:Data>
           </ruleml:Atom>
         </ruleml:then>
       </ruleml:Rule>
@@ -55,13 +55,13 @@
         <ruleml:if>
           <ruleml:And>
               <ruleml:Atom>
-                <ruleml:Rel>generatesSyntethicContent</ruleml:Rel>
-                <ruleml:Var>AIsystem</ruleml:Var>
+                <ruleml:Rel>ofsynteticcontent</ruleml:Rel>
+                <ruleml:Var>Generation</ruleml:Var>
                 <ruleml:Data xsi:type="xs:boolean">true</ruleml:Data>
               </ruleml:Atom>
               <ruleml:Atom>
-                <ruleml:Rel>onlyEditsSyntheticContent</ruleml:Rel>
-                <ruleml:Var>AIsystem</ruleml:Var>
+                <ruleml:Rel>editing</ruleml:Rel>
+                <ruleml:Var>Just</ruleml:Var>
                 <ruleml:Data xsi:type="xs:boolean">true</ruleml:Data>
               </ruleml:Atom>
           </ruleml:And>
@@ -70,13 +70,13 @@
           <ruleml:And>
               <ruleml:Atom>
                 <ruleml:Rel>task</ruleml:Rel>
-                <ruleml:Var>AIprovider</ruleml:Var>
-                <ruleml:Data xsi:type="xs:string">hasMarkingObligation</ruleml:Data>
+                <ruleml:Var>Marking</ruleml:Var>
+                <ruleml:Data xsi:type="xs:string">obligation</ruleml:Data>
               </ruleml:Atom>
               <ruleml:Atom>
                 <ruleml:Rel>task</ruleml:Rel>
-                <ruleml:Var>AIprovider</ruleml:Var>
-                <ruleml:Data xsi:type="xs:string">FollowVoluntaryCodeOfConduct</ruleml:Data>
+                <ruleml:Var>Volutary</ruleml:Var>
+                <ruleml:Data xsi:type="xs:string">codesofconduct</ruleml:Data>
               </ruleml:Atom>
           </ruleml:And>
         </ruleml:then>
@@ -88,13 +88,13 @@
         <ruleml:if>
           <ruleml:And>
               <ruleml:Atom>
-                <ruleml:Rel>generatesSyntethicContent</ruleml:Rel>
-                <ruleml:Var>AIsystem</ruleml:Var>
+                <ruleml:Rel>ofsynteticcontent</ruleml:Rel>
+                <ruleml:Var>Generation</ruleml:Var>
                 <ruleml:Data xsi:type="xs:boolean">true</ruleml:Data>
               </ruleml:Atom>
               <ruleml:Atom>
-                <ruleml:Rel>onlyEditsSyntheticContent</ruleml:Rel>
-                <ruleml:Var>AIsystem</ruleml:Var>
+                <ruleml:Rel>editing</ruleml:Rel>
+                <ruleml:Var>Just</ruleml:Var>
                 <ruleml:Data xsi:type="xs:boolean">false</ruleml:Data>
               </ruleml:Atom>
           </ruleml:And>
@@ -103,13 +103,13 @@
           <ruleml:And>
               <ruleml:Atom>
                 <ruleml:Rel>task</ruleml:Rel>
-                <ruleml:Var>AIprovider</ruleml:Var>
-                <ruleml:Data xsi:type="xs:string">hasMarkingObligation</ruleml:Data>
+                <ruleml:Var>Marking</ruleml:Var>
+                <ruleml:Data xsi:type="xs:string">obligation</ruleml:Data>
               </ruleml:Atom>
               <ruleml:Atom>
                 <ruleml:Rel>task</ruleml:Rel>
-                <ruleml:Var>BPMNtool</ruleml:Var>
-                <ruleml:Data xsi:type="xs:string">printMessage:LIMITED_RISK</ruleml:Data>
+                <ruleml:Var>Print</ruleml:Var>
+                <ruleml:Data xsi:type="xs:string">message:LIMITEDRISK</ruleml:Data>
               </ruleml:Atom>
           </ruleml:And>
         </ruleml:then>
@@ -120,16 +120,16 @@
       <ruleml:Rule key="r5">
         <ruleml:if>
           <ruleml:Atom>
-            <ruleml:Rel>generatesSyntethicContent</ruleml:Rel>
-            <ruleml:Var>AIsystem</ruleml:Var>
+            <ruleml:Rel>ofsynteticcontent</ruleml:Rel>
+            <ruleml:Var>Generation</ruleml:Var>
             <ruleml:Data xsi:type="xs:boolean">false</ruleml:Data>
           </ruleml:Atom>
         </ruleml:if>
         <ruleml:then>
           <ruleml:Atom>
             <ruleml:Rel>task</ruleml:Rel>
-            <ruleml:Var>AIprovider</ruleml:Var>
-            <ruleml:Data xsi:type="xs:string">FollowVoluntaryCodeOfConduct</ruleml:Data>
+            <ruleml:Var>Volutary</ruleml:Var>
+            <ruleml:Data xsi:type="xs:string">codesofconduct</ruleml:Data>
           </ruleml:Atom>
         </ruleml:then>
       </ruleml:Rule>
