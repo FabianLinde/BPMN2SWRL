@@ -1,0 +1,288 @@
+#PATH 1 
+#Human-readable SWRL: aMathematicalOptimizationSystem?(?AIsystem)  -> task(?BPMNtool, ?printMessage:OUTAIACT) 
+
+ 						<ruleml:imp>
+                        	<ruleml:_rlab ruleml:href="#rule_1"/>
+                        		<ruleml:_body> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="aMathematicalOptimizationSystem?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_body> 
+                        		<ruleml:_head> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="#task"/>
+                            				<swrl:argument1 rdf:resource="#?BPMNtool"/>
+                            				<owlx:DataValue owlx:datatype="&xsd;string">printMessage:OUTAIACT</owlx:DataValue>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_head> 
+                        </ruleml:imp>
+
+
+#PATH 2 
+#Human-readable SWRL: not(aMathematicalOptimizationSystem?(?AIsystem)) ^ aMachineBasedAutonomousAndAdaptiveSystem?(?AIsystem)  -
+
+ 						<ruleml:imp>
+                        	<ruleml:_rlab ruleml:href="#rule_2"/>
+                        		<ruleml:_body> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="aMathematicalOptimizationSystem?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">false</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="aMachineBasedAutonomousAndAdaptiveSystem?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_body> 
+                        		<ruleml:_head> 
+                        			
+                        		</ruleml:_head> 
+                        </ruleml:imp>
+
+
+#PATH 3 
+#Human-readable SWRL: not(aMathematicalOptimizationSystem?(?AIsystem)) ^ not(aMachineBasedAutonomousAndAdaptiveSystem?(?AIsystem))  -> task(?BPMNtool, ?printMessage:OUTAIACT) 
+
+ 						<ruleml:imp>
+                        	<ruleml:_rlab ruleml:href="#rule_3"/>
+                        		<ruleml:_body> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="aMathematicalOptimizationSystem?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">false</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="aMachineBasedAutonomousAndAdaptiveSystem?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">false</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_body> 
+                        		<ruleml:_head> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="#task"/>
+                            				<swrl:argument1 rdf:resource="#?BPMNtool"/>
+                            				<owlx:DataValue owlx:datatype="&xsd;string">printMessage:OUTAIACT</owlx:DataValue>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_head> 
+                        </ruleml:imp>
+
+
+#PATH 4 
+#Human-readable SWRL: aBasicDataProcessingSystem?(?AIsystem)  -> task(?BPMNtool, ?printMessage:OUTAIACT) 
+
+ 						<ruleml:imp>
+                        	<ruleml:_rlab ruleml:href="#rule_4"/>
+                        		<ruleml:_body> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="aBasicDataProcessingSystem?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_body> 
+                        		<ruleml:_head> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="#task"/>
+                            				<swrl:argument1 rdf:resource="#?BPMNtool"/>
+                            				<owlx:DataValue owlx:datatype="&xsd;string">printMessage:OUTAIACT</owlx:DataValue>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_head> 
+                        </ruleml:imp>
+
+
+#PATH 5 
+#Human-readable SWRL: not(aBasicDataProcessingSystem?(?AIsystem)) ^ aMachineBasedAutonomousAndAdaptiveSystem?(?AIsystem)  -
+
+ 						<ruleml:imp>
+                        	<ruleml:_rlab ruleml:href="#rule_5"/>
+                        		<ruleml:_body> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="aBasicDataProcessingSystem?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">false</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="aMachineBasedAutonomousAndAdaptiveSystem?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_body> 
+                        		<ruleml:_head> 
+                        			
+                        		</ruleml:_head> 
+                        </ruleml:imp>
+
+
+#PATH 6 
+#Human-readable SWRL: not(aBasicDataProcessingSystem?(?AIsystem)) ^ not(aMachineBasedAutonomousAndAdaptiveSystem?(?AIsystem))  -> task(?BPMNtool, ?printMessage:OUTAIACT) 
+
+ 						<ruleml:imp>
+                        	<ruleml:_rlab ruleml:href="#rule_6"/>
+                        		<ruleml:_body> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="aBasicDataProcessingSystem?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">false</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="aMachineBasedAutonomousAndAdaptiveSystem?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">false</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_body> 
+                        		<ruleml:_head> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="#task"/>
+                            				<swrl:argument1 rdf:resource="#?BPMNtool"/>
+                            				<owlx:DataValue owlx:datatype="&xsd;string">printMessage:OUTAIACT</owlx:DataValue>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_head> 
+                        </ruleml:imp>
+
+
+#PATH 7 
+#Human-readable SWRL: basedOnClassicalHeuristics?(?AIsystem)  -> task(?BPMNtool, ?printMessage:OUTAIACT) 
+
+ 						<ruleml:imp>
+                        	<ruleml:_rlab ruleml:href="#rule_7"/>
+                        		<ruleml:_body> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="basedOnClassicalHeuristics?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_body> 
+                        		<ruleml:_head> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="#task"/>
+                            				<swrl:argument1 rdf:resource="#?BPMNtool"/>
+                            				<owlx:DataValue owlx:datatype="&xsd;string">printMessage:OUTAIACT</owlx:DataValue>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_head> 
+                        </ruleml:imp>
+
+
+#PATH 8 
+#Human-readable SWRL: not(basedOnClassicalHeuristics?(?AIsystem)) ^ aMachineBasedAutonomousAndAdaptiveSystem?(?AIsystem)  -
+
+ 						<ruleml:imp>
+                        	<ruleml:_rlab ruleml:href="#rule_8"/>
+                        		<ruleml:_body> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="basedOnClassicalHeuristics?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">false</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="aMachineBasedAutonomousAndAdaptiveSystem?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_body> 
+                        		<ruleml:_head> 
+                        			
+                        		</ruleml:_head> 
+                        </ruleml:imp>
+
+
+#PATH 9 
+#Human-readable SWRL: not(basedOnClassicalHeuristics?(?AIsystem)) ^ not(aMachineBasedAutonomousAndAdaptiveSystem?(?AIsystem))  -> task(?BPMNtool, ?printMessage:OUTAIACT) 
+
+ 						<ruleml:imp>
+                        	<ruleml:_rlab ruleml:href="#rule_9"/>
+                        		<ruleml:_body> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="basedOnClassicalHeuristics?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">false</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="aMachineBasedAutonomousAndAdaptiveSystem?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">false</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_body> 
+                        		<ruleml:_head> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="#task"/>
+                            				<swrl:argument1 rdf:resource="#?BPMNtool"/>
+                            				<owlx:DataValue owlx:datatype="&xsd;string">printMessage:OUTAIACT</owlx:DataValue>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_head> 
+                        </ruleml:imp>
+
+
+#PATH 10 
+#Human-readable SWRL: aSimplePredictionSystem?(?AIsystem)  -> task(?BPMNtool, ?printMessage:OUTAIACT) 
+
+ 						<ruleml:imp>
+                        	<ruleml:_rlab ruleml:href="#rule_10"/>
+                        		<ruleml:_body> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="aSimplePredictionSystem?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_body> 
+                        		<ruleml:_head> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="#task"/>
+                            				<swrl:argument1 rdf:resource="#?BPMNtool"/>
+                            				<owlx:DataValue owlx:datatype="&xsd;string">printMessage:OUTAIACT</owlx:DataValue>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_head> 
+                        </ruleml:imp>
+
+
+#PATH 11 
+#Human-readable SWRL: not(aSimplePredictionSystem?(?AIsystem)) ^ aMachineBasedAutonomousAndAdaptiveSystem?(?AIsystem)  -
+
+ 						<ruleml:imp>
+                        	<ruleml:_rlab ruleml:href="#rule_11"/>
+                        		<ruleml:_body> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="aSimplePredictionSystem?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">false</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="aMachineBasedAutonomousAndAdaptiveSystem?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_body> 
+                        		<ruleml:_head> 
+                        			
+                        		</ruleml:_head> 
+                        </ruleml:imp>
+
+
+#PATH 12 
+#Human-readable SWRL: not(aSimplePredictionSystem?(?AIsystem)) ^ not(aMachineBasedAutonomousAndAdaptiveSystem?(?AIsystem))  -> task(?BPMNtool, ?printMessage:OUTAIACT) 
+
+ 						<ruleml:imp>
+                        	<ruleml:_rlab ruleml:href="#rule_12"/>
+                        		<ruleml:_body> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="aSimplePredictionSystem?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">false</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+									<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="aMachineBasedAutonomousAndAdaptiveSystem?"/>
+                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
+                            				<swrl:argument2 rdf:datatype="&xsd;boolean">false</swrl:argument2>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_body> 
+                        		<ruleml:_head> 
+                        			<swrl:DatavaluedPropertyAtom>
+                            				<swrl:propertyPredicate rdf:resource="#task"/>
+                            				<swrl:argument1 rdf:resource="#?BPMNtool"/>
+                            				<owlx:DataValue owlx:datatype="&xsd;string">printMessage:OUTAIACT</owlx:DataValue>
+                            		</swrl:DatavaluedPropertyAtom>
+                        		</ruleml:_head> 
+                        </ruleml:imp>
+
+

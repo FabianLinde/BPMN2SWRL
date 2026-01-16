@@ -226,7 +226,11 @@ if __name__ == "__main__":
     import sys
 
     bpmn_file = sys.argv[1]
-    output_file = sys.argv[2]
+
+    if len(sys.argv) > 2:
+        output_file = sys.argv[2]
+    else:
+        output_file = "../outputs/Fabians_implementation/{file_name}".format(file_name=bpmn_file.split("/")[-1].replace(".bpmn", "_swrl_rules.txt"))
 
 
     graph = parse_bpmn(bpmn_file)
