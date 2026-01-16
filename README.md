@@ -7,11 +7,18 @@ python bpmn_to_swrl_fabian.py input.bpmn
 ```
 This will output a file title input_swrl_rules.txt.
 
+#### Input constraints
+- The BPMN diagram should consist only of exclusive and parallel gateways, tasks, and sequence flows.
+- The names of gateways and tasks in the BPMN diagram need to follow the structure of `"actor condition/task"`, with actor and condition/task separated by a single space (e.g. `AIsystem generatesSyntheticContent`).
+- Sequence flows' names should only be "Yes" or "No".
+  
+
 ### How It Works
 1. The BPMN XML is parsed, by nodes and by flows, resulting in a graph.
 2. All possible paths of the graph are indexed through DFS (depth-first-search).
 3. For each path, conditions, options and resulting tasks/obligations are extracted.
 4. For each path, the extracted combination of conditions, options and resulting tasks/obligations are transformed into human-readable and XML-based SWRL rules.
+
 
 ---
 
