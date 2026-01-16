@@ -21,21 +21,9 @@
 
 
 #PATH 2 
-#Human-readable SWRL: not(forMilitaryORDefenceORNationalSecurity?(?AIsystem))  -
+#Human-readable SWRL: In this path [ not(forMilitaryORDefenceORNationalSecurity?(?AIsystem)) ], no tasks are performed. Therefore, as no consequents arise, no SWRL rule is generated.
 
- 						<ruleml:imp>
-                        	<ruleml:_rlab ruleml:href="#rule_2"/>
-                        		<ruleml:_body> 
-                        			<swrl:DatavaluedPropertyAtom>
-                            				<swrl:propertyPredicate rdf:resource="forMilitaryORDefenceORNationalSecurity?"/>
-                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
-                            				<swrl:argument2 rdf:datatype="&xsd;boolean">false</swrl:argument2>
-                            		</swrl:DatavaluedPropertyAtom>
-                        		</ruleml:_body> 
-                        		<ruleml:_head> 
-                        			
-                        		</ruleml:_head> 
-                        </ruleml:imp>
+
 
 
 #PATH 3 
@@ -66,44 +54,15 @@
 
 
 #PATH 4 
-#Human-readable SWRL: forInternationalCooperationORLawEnforcementAgreementsORJudicialCooperation?(?AIsystem) ^ not(aThirdCountryPublicAuthority?(?AIprovider))  -
+#Human-readable SWRL: In this path [ forInternationalCooperationORLawEnforcementAgreementsORJudicialCooperation?(?AIsystem) ^ not(aThirdCountryPublicAuthority?(?AIprovider)) ], no tasks are performed. Therefore, as no consequents arise, no SWRL rule is generated.
 
- 						<ruleml:imp>
-                        	<ruleml:_rlab ruleml:href="#rule_4"/>
-                        		<ruleml:_body> 
-                        			<swrl:DatavaluedPropertyAtom>
-                            				<swrl:propertyPredicate rdf:resource="forInternationalCooperationORLawEnforcementAgreementsORJudicialCooperation?"/>
-                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
-                            				<swrl:argument2 rdf:datatype="&xsd;boolean">true</swrl:argument2>
-                            		</swrl:DatavaluedPropertyAtom>
-									<swrl:DatavaluedPropertyAtom>
-                            				<swrl:propertyPredicate rdf:resource="aThirdCountryPublicAuthority?"/>
-                            				<swrl:argument1 rdf:resource="#?AIprovider"/>
-                            				<swrl:argument2 rdf:datatype="&xsd;boolean">false</swrl:argument2>
-                            		</swrl:DatavaluedPropertyAtom>
-                        		</ruleml:_body> 
-                        		<ruleml:_head> 
-                        			
-                        		</ruleml:_head> 
-                        </ruleml:imp>
+
 
 
 #PATH 5 
-#Human-readable SWRL: not(forInternationalCooperationORLawEnforcementAgreementsORJudicialCooperation?(?AIsystem))  -
+#Human-readable SWRL: In this path [ not(forInternationalCooperationORLawEnforcementAgreementsORJudicialCooperation?(?AIsystem)) ], no tasks are performed. Therefore, as no consequents arise, no SWRL rule is generated.
 
- 						<ruleml:imp>
-                        	<ruleml:_rlab ruleml:href="#rule_5"/>
-                        		<ruleml:_body> 
-                        			<swrl:DatavaluedPropertyAtom>
-                            				<swrl:propertyPredicate rdf:resource="forInternationalCooperationORLawEnforcementAgreementsORJudicialCooperation?"/>
-                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
-                            				<swrl:argument2 rdf:datatype="&xsd;boolean">false</swrl:argument2>
-                            		</swrl:DatavaluedPropertyAtom>
-                        		</ruleml:_body> 
-                        		<ruleml:_head> 
-                        			
-                        		</ruleml:_head> 
-                        </ruleml:imp>
+
 
 
 #PATH 6 
@@ -129,21 +88,9 @@
 
 
 #PATH 7 
-#Human-readable SWRL: not(forScientificResearchAndDevelopment?(?AIsystem))  -
+#Human-readable SWRL: In this path [ not(forScientificResearchAndDevelopment?(?AIsystem)) ], no tasks are performed. Therefore, as no consequents arise, no SWRL rule is generated.
 
- 						<ruleml:imp>
-                        	<ruleml:_rlab ruleml:href="#rule_7"/>
-                        		<ruleml:_body> 
-                        			<swrl:DatavaluedPropertyAtom>
-                            				<swrl:propertyPredicate rdf:resource="forScientificResearchAndDevelopment?"/>
-                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
-                            				<swrl:argument2 rdf:datatype="&xsd;boolean">false</swrl:argument2>
-                            		</swrl:DatavaluedPropertyAtom>
-                        		</ruleml:_body> 
-                        		<ruleml:_head> 
-                        			
-                        		</ruleml:_head> 
-                        </ruleml:imp>
+
 
 
 #PATH 8 
@@ -169,20 +116,8 @@
 
 
 #PATH 9 
-#Human-readable SWRL: not(forPreMarketResearchORTestingORDevelopmentActivity?(?AIsystem))  -
+#Human-readable SWRL: In this path [ not(forPreMarketResearchORTestingORDevelopmentActivity?(?AIsystem)) ], no tasks are performed. Therefore, as no consequents arise, no SWRL rule is generated.
 
- 						<ruleml:imp>
-                        	<ruleml:_rlab ruleml:href="#rule_9"/>
-                        		<ruleml:_body> 
-                        			<swrl:DatavaluedPropertyAtom>
-                            				<swrl:propertyPredicate rdf:resource="forPreMarketResearchORTestingORDevelopmentActivity?"/>
-                            				<swrl:argument1 rdf:resource="#?AIsystem"/>
-                            				<swrl:argument2 rdf:datatype="&xsd;boolean">false</swrl:argument2>
-                            		</swrl:DatavaluedPropertyAtom>
-                        		</ruleml:_body> 
-                        		<ruleml:_head> 
-                        			
-                        		</ruleml:_head> 
-                        </ruleml:imp>
+
 
 

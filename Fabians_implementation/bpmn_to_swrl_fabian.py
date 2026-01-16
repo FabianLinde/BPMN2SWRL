@@ -208,13 +208,19 @@ def print_swrl_rules_to_file(paths, filename="swrl_rules.txt"):
                         \t\t</ruleml:_head> 
                         </ruleml:imp>""".format(rule_name_var=rule_name, body_atoms_var=body_atoms[:-10], head_atoms_var=head_atoms[:-10])                                          
 
+
+        if len(tasks) == 0:
+            swrl_rule = ""
+            human_readable_swrl_rule = "In this path [ {path} ], no tasks are performed. Therefore, as no consequents arise, no SWRL rule is generated.".format(path=human_readable_swrl_rule[:-3])
+
+
         swrl_rules.append(swrl_rule)
 
-        human_readable_swrl_rules.append(human_readable_swrl_rule)
+        human_readable_swrl_rules.append("#Human-readable SWRL: " + human_readable_swrl_rule)
 
     with open(filename, "w", encoding="utf-8") as f:
         for i, (swrl_rule, human_readable_swrl_rule) in enumerate(zip(swrl_rules, human_readable_swrl_rules)):
-            f.write("#PATH " + str(i+1) + " " + "\n" + "#Human-readable SWRL: " + human_readable_swrl_rule + "\n\n" + swrl_rule + "\n\n\n")
+            f.write("#PATH " + str(i+1) + " " + "\n" + human_readable_swrl_rule + "\n\n" + swrl_rule + "\n\n\n")
 
 
 
