@@ -1,6 +1,9 @@
 import xml.etree.ElementTree as ET
 from collections import defaultdict
 
+import networkx as nx
+import matplotlib.pyplot as plt
+
 from anyio import key, value
 
 BPMN_NS = {"bpmn": "http://www.omg.org/spec/BPMN/20100524/MODEL"}
@@ -64,6 +67,29 @@ def parse_bpmn(xml_path):
         graph.add_flow(flow_id, src, tgt, name)
 
     return graph
+
+def plot_graph(graph):
+    G = nx.DiGraph()
+    labels = {}
+
+    for node_id, info in graph.nodes.items():
+        label = info.get("name") or node_id
+        G.add_node(node_id)
+        labels[node_id] = label
+
+    for flow_id, flow in graph.flows.items():
+        src = flow["source"]
+        tgt = flow["target"]
+        flow_label = flow["name"] or flow_id
+        G.add_edge(src, tgt, label=flow_label)
+
+    pos = nx.spring_layout(G)
+    nx.draw(G, pos, with_labels=True, labels=labels, node_size=1500)
+
+    edge_labels = nx.get_edge_attributes(G, "label")
+    nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels)
+
+    plt.show()
 
 
 def enumerate_paths(graph):
@@ -238,12 +264,21 @@ if __name__ == "__main__":
     else:
         output_file = "../outputs/Fabians_implementation/{file_name}".format(file_name=bpmn_file.split("/")[-1].replace(".bpmn", "_swrl_rules.txt"))
 
-
+    
     graph = parse_bpmn(bpmn_file)
+
+
+    graph_print = False
+    if graph_print == True:
+        plot_graph(graph)
+
     paths = enumerate_paths(graph)
 
 
     print_swrl_rules_to_file(paths, output_file)
+
+
+
 
 
 
